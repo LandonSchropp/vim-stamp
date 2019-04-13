@@ -12,3 +12,7 @@ Vim Stamp can be installed using your favorite Vim plugin manager. I would recom
 ``` vim
 Plug 'landonschropp/vim-stamp'
 ```
+
+## Local Development
+
+Vim Stamp is fully tested. To run the tests, execute the `bin/test` script.

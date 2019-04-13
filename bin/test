@@ -1,16 +1,6 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-cd "$(dirname "$0")/.."
 
-# This is a simplified Vim configuration that's used to test the stamp plugin. This was taken from
-# the Vader instructions on setting up an isolated testing environment.
-# https://github.com/junegunn/vader.vim#setting-up-isolated-testing-environment
-VIMRC=$(cat <<EOF
-set runtimepath=~/.vim/bundle/vader.vim
-source $(realpath stamp.vim)
-EOF
-)
-
-# Run the test suite in NeoVim without any plugins and with a barebones .vimrc file.
-nvim --headless -u <(echo "$VIMRC") '+Vader! -q test/*.vader'
+# Run the tests using the simplified NeoVim configuration.
+"$(dirname "$0")/run" --headless '+Vader! -q test/*.vader'

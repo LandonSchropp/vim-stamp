@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# This is a simplified Vim configuration that's used to test the stamp plugin. This was taken from
+# the Vader instructions on setting up an isolated testing environment.
+# https://github.com/junegunn/vader.vim#setting-up-isolated-testing-environment
+TEXT=$(cat <<EOF
+Hello
+Hola
+Bonjour
+EOF
+)
+
+"$(dirname "$0")/run" <(echo "$TEXT")

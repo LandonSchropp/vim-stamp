@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script runs an instance of NeoVim with only the stamp plugin. This is useful for testing the
+# This script runs an instance of Neovim with only the stamp plugin. This is useful for testing the
 # plugin behavior.
 
 set -euo pipefail
@@ -15,5 +15,5 @@ source $(realpath stamp.vim)
 EOF
 )
 
-# Run the test suite in NeoVim without any plugins and with a barebones .vimrc file.
+# Run the test suite in Neovim without any plugins and with a barebones .vimrc file.
 nvim -u <(echo "$VIMRC") "$@"

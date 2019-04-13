@@ -14,4 +14,4 @@ EOF
 )
 
 # Run the test suite in NeoVim without any plugins and with a barebones .vimrc file.
-nvim --headless -u <(echo "$VIMRC") '+Vader!test/*.vader'
+nvim --headless -u <(echo "$VIMRC") '+Vader! -q test/*.vader'

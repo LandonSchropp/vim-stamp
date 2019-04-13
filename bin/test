@@ -7,7 +7,6 @@ cd "$(dirname "$0")/.."
 # the Vader instructions on setting up an isolated testing environment.
 # https://github.com/junegunn/vader.vim#setting-up-isolated-testing-environment
 VIMRC=$(cat <<EOF
-set background=light
 set runtimepath=~/.vim/bundle/vader.vim
 source $(realpath stamp.vim)
 EOF

@@ -101,3 +101,39 @@ Expect:
   Hello
   Hola
   Hello
+
+# Stamping multiple visual lines with a single line
+--------------------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  Vy
+  j
+  VjS
+
+Expect:
+  Hello
+  Hello
+
+# Stamping a single visual line with multiple lines
+--------------------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  Vjy
+  jj
+  VS
+
+Expect:
+  Hello
+  Hola
+  Hello
+  Hola

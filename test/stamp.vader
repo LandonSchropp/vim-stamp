@@ -1,0 +1,103 @@
+# Stamping inner words
+----------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  yiw
+  jj
+  Siw
+
+Expect:
+  Hello
+  Hola
+  Hello
+
+# Stamping around words
+-----------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  yiw
+  jj
+  Saw
+
+Expect:
+  Hello
+  Hola
+  Hello
+
+# Stamping to the end of the line
+---------------------------------
+
+Given:
+  Hello Hola Bounjour
+
+Do:
+  yiw
+  ww
+  S$
+
+Expect:
+  Hello Hola Hello
+
+# Stamping a whole line
+-----------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  yiw
+  jj
+  SS
+
+Expect:
+  Hello
+  Hola
+  Hello
+
+# Stamping a visual selection
+-----------------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  yiw
+  jj
+  viwS
+
+Expect:
+  Hello
+  Hola
+  Hello
+
+# Stamping a visual line selection
+----------------------------------
+
+Given:
+  Hello
+  Hola
+  Bounjour
+
+Do:
+  yiw
+  jj
+  VS
+
+Expect:
+  Hello
+  Hola
+  Hello

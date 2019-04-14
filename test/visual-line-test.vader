@@ -1,0 +1,133 @@
+#################################
+# Yanking and stamping one line #
+#################################
+
+Given (A single line):
+  Hello
+
+Do (Yank and stamp the line):
+  yy
+  VS
+
+Expect (The line stays the same):
+  Hello
+
+#########################################
+# Yanking one line and stamping another #
+#########################################
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the first line and stamp the last line):
+  yy
+  G
+  VS
+
+Expect (The last line is replaced with the first line):
+  Hello
+  Hola
+  Hello
+
+---
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the last line and stamp the first line):
+  G
+  yy
+  gg
+  VS
+
+Expect (The last line is replaced with the first line):
+  Bonjour
+  Hola
+  Bonjour
+
+---
+
+####################################
+# Yanking words and stamping lines #
+####################################
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the first word and stamp the last line):
+  yiw
+  G
+  VS
+
+Expect (The last line is replaced with the first word):
+  Hello
+  Hola
+  Hello
+
+---
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the last word and stamp the first line):
+  G
+  yiw
+  gg
+  VS
+
+Expect (The first line is replaced with the last word):
+  Bonjour
+  Hola
+  Bonjour
+
+---
+
+#######################################
+# Yanking and stamping multiple lines #
+#######################################
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the first line and stamp the last two):
+  yy
+  j
+  VGS
+
+Expect (The last two lines are replaced with the first line):
+  Hello
+  Hello
+
+---
+
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the first two lines and stamp the last):
+  Vjy
+  G
+  VS
+
+Expect (The last two lines are replaced with the first line):
+  Hello
+  Hola
+  Hello
+  Hola
+
+#######################
+# Stamping repetition #
+#######################
+
+# TODO: Repeating visual line stamp

@@ -1,0 +1,113 @@
+#################################
+# Yanking and stamping one word #
+#################################
+
+Given (A line with a single word):
+  Hello
+
+Do (Yank and stamp the word):
+  yiw
+  viwS
+
+Expect (The word stays the same):
+  Hello
+
+#########################################
+# Yanking one word and stamping another #
+#########################################
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the first word and stamp the last word):
+  yiw
+  $
+  viwS
+
+Expect (The last word is replaced with the first word):
+  Hello Hola Hello
+
+---
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the last word and stamp the first word):
+  $
+  yiw
+  ^
+  viwS
+
+Expect (The first word is replaced with the last word):
+  Bonjour Hola Bonjour
+
+---
+
+####################################
+# Yanking lines and stamping words #
+####################################
+
+Given (Multiple lines):
+  Hello
+  Hola Bonjour
+
+Do (Yank the first line and stamp the last word):
+  yiw
+  G$
+  viwS
+
+Expect (The last line is replaced with the first word):
+  Hello
+  Hola Hello
+
+---
+
+Given (Multiple lines):
+  Hello Hola
+  Bonjour
+
+Do (Yank the last line and stamp the first word):
+  G
+  yiw
+  gg^
+  viwS
+
+Expect (The first word is replaced with the last line):
+  Bonjour Hola
+  Bonjour
+
+---
+
+#######################################
+# Yanking and stamping multiple words #
+#######################################
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the first word and stamp the last two words):
+  yiw
+  w
+  v$S
+
+Expect (The last two word are replaced with the first line):
+  Hello Hello
+
+---
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the first two words and stamp the last word):
+  veey
+  ww
+  v$S
+
+Expect (The last two lines are replaced with the first line):
+  Hello Hola Hello Hola
+
+#######################
+# Stamping repetition #
+#######################
+
+# TODO: Repeating visual character stamp

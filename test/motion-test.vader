@@ -1,0 +1,77 @@
+#################################
+# Yanking and stamping one word #
+#################################
+
+Given (A line with a single word):
+  Hello
+
+Do (Yank and stamp the word):
+  yiw
+  Siw
+
+Expect (The word stays the same):
+  Hello
+
+#########################################
+# Yanking one word and stamping another #
+#########################################
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the first word and stamp the last word):
+  yiw
+  $
+  Siw
+
+Expect (The last word is replaced with the first word):
+  Hello Hola Hello
+
+---
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the last word and stamp the first word):
+  $
+  yiw
+  ^
+  Siw
+
+Expect (The first word is replaced with the last word):
+  Bonjour Hola Bonjour
+
+#################################################
+# Stamping to the beginning and end of the line #
+#################################################
+
+Given (Multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the first word and stamp from the second word until the end of the line):
+  yiw
+  w
+  S$
+
+Expect (Replaces the last two words with the first word):
+  Hello Hello
+
+---
+
+Given (A line with multiple words):
+  Hello Hola Bonjour
+
+Do (Yank the lst word and stamp from the second word until the beginning of the line):
+  $
+  yiw
+  h
+  S^
+
+Expect (Replaces the last two words with the first word):
+  Bonjour Bonjour
+
+#######################
+# Stamping repetition #
+#######################
+
+# TODO: Add a repeat case.

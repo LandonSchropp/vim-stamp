@@ -132,3 +132,6 @@ Expect (The last two lines are replaced with the first line):
 # TODO: Repeating visual character stamp
 # TODO: Repeating motion stamp
 # TODO: Repeating line stamp
+# TODO: Stamping the last line.
+# TODO: Stamping the first line.
+# TODO: Stamping the only line in a file.

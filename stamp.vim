@@ -11,10 +11,11 @@ function! VisualStamp(mode) range
   endif
 
   " When in character-wise visual mode, insert a character after the visual selection. This prevents
-  " When in character-wise visual mode there are no characters after the current motion (e.g. $).
-  if a:mode ==# 'v'
-    execute "normal! `>a#\<esc>"
-  endif
+  " the previous space from being removed when there are no characters after the current motion
+  " (e.g. $). When in line-wise mode, insert a new line below the visual selection. This prevents
+  " issues when replacing the last line in the file.
+  let insert_command = a:mode ==# 'v' ? "`>a#\<esc> " : "`>o\<esc>"
+  execute "normal! " . insert_command
 
   " Reselect the last visual selection.
   silent execute "normal! gv"
@@ -25,10 +26,9 @@ function! VisualStamp(mode) range
   " Paste the text from the 0 register.
   silent execute 'normal! P'
 
-  " When in character-wise visual mode, remove the added character.
-  if a:mode ==# 'v'
-    silent execute 'normal! l"_x'
-  endif
+  " Remove the added character or line depending on the mode.
+  let delete_command = a:mode ==# 'v' ? 'l"_x' : 'j"_dd'
+  execute "normal! " . delete_command
 
   " Move the cursor back to the beginning of the selection.
   silent exec 'normal! `<'

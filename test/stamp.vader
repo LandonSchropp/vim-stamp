@@ -50,23 +50,6 @@ Given (Three lines of text):
   Hola
   Bounjour
 
-Do (Yank the first word, go to the last line and stamp the whole line):
-  yiw
-  jj
-  SS
-
-Expect (The last line is replaced with the first word):
-  Hello
-  Hola
-  Hello
-
----
-
-Given (Three lines of text):
-  Hello
-  Hola
-  Bounjour
-
 Do (Yank the first word, go to the last line, visually select the last word and stamp):
   yiw
   jj
@@ -117,12 +100,30 @@ Given (Three lines of text):
   Hola
   Bounjour
 
-Do (Yank the first two linesline, visually select the last line and stamp):
+Do (Yank the first two lines, visually select the last line and stamp):
   Vjy
   jj
   VS
 
 Expect (The last two lines are replaced with the first line):
+  Hello
+  Hola
+  Hello
+  Hola
+
+---
+
+Given (Three lines of text):
+  Hello
+  Hola
+  Bounjour
+
+Do (Yank the first word, go to the last line and stamp the whole line):
+  yiw
+  jj
+  SS
+
+Expect (The last line is replaced with the first word):
   Hello
   Hola
   Hello

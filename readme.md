@@ -1,23 +1,28 @@
 # Vim Stamp
 
-Vim Stamp is a plugin that makes it easy to replace characters with the contents of the delete
-register without altering the delete register. This allows you to very quickly replace text without
-the need for macros.
+Vim Stamp is a plugin that makes it easy to repeatedly replace text without affecting your
+`0` register. This allows you to very quickly replace text in a repeatable way without the need for
+macros.
+
+Vim Stamp works with normal mode motions (`S<motion>`), visual line selections (`V<motion>S`),
+visual character selections (`v<motion>S`) and entire lines (`SS`).
 
 ## Installation
 
-Vim Stamp can be installed using your favorite Vim plugin manager. I would recommend using
+Vim Stamp can be installed using your favorite Vim plugin manager. I recommend using
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 ``` vim
-Plug 'landonschropp/vim-stamp'
+Plug 'LandonSchropp/vim-stamp'
 ```
 
-## Local Development
+## Development
 
-This repo comes with a few scripts to make local development much easier:
+If you'd like to poke around in this repo, it comes with a few scripts to make local development
+much easier:
 
 * [`bin/run`](bin/run): Execute arbitrary commands inside of a Neovim instance that only has Vader
-  and the stamp plugin loaded.
-* [`bin/test`](bin/test): Run the test suite.
-* [`bin/example`](bin/run): Calls `bin/run` and loads a buffer with sample data for easy debugging.
+  and Vim Stamp loaded.
+* [`bin/test`](bin/test): Run the Vader test suite.
+* [`bin/example`](bin/run): Calls `bin/run` and loads a buffer with some sample data for easy,
+  on-the-fly testing.

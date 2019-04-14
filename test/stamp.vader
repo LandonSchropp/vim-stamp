@@ -1,139 +1,134 @@
-# Stamping inner words
-----------------------
-
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first word, go to the last line and stamp around the word):
   yiw
   jj
   Siw
 
-Expect:
+Expect (The last word is replaced with the first word):
   Hello
   Hola
   Hello
 
-# Stamping around words
------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first word, go to the last line and stamp around the word):
   yiw
   jj
   Saw
 
-Expect:
+Expect (The last word is replaced with the first word):
   Hello
   Hola
   Hello
 
-# Stamping to the end of the line
----------------------------------
+---
 
-Given:
+Given (A line of text with multiple words):
   Hello Hola Bounjour
 
-Do:
+Do (Yank the first word, go to the last word and stamp until the end of the line):
   yiw
   ww
   S$
 
-Expect:
+Expect (The last word is replaced with the first word):
   Hello Hola Hello
 
-# Stamping a whole line
------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first word, go to the last line and stamp the whole line):
   yiw
   jj
   SS
 
-Expect:
+Expect (The last line is replaced with the first word):
   Hello
   Hola
   Hello
 
-# Stamping a visual selection
------------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first word, go to the last line, visually select the last word and stamp):
   yiw
   jj
   viwS
 
-Expect:
+Expect (The last word is replaced with the first word):
   Hello
   Hola
   Hello
 
-# Stamping a visual line selection
-----------------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first word, go to the last line, visually select the line and stamp):
   yiw
   jj
   VS
 
-Expect:
+Expect (The last line is replaced with the first word):
   Hello
   Hola
   Hello
 
-# Stamping multiple visual lines with a single line
---------------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first line, visually select the last two lines and stamp):
   Vy
   j
   VjS
 
-Expect:
+Expect (The last two lines are replaced with the first line):
   Hello
   Hello
 
-# Stamping a single visual line with multiple lines
---------------------------------
+---
 
-Given:
+Given (Three lines of text):
   Hello
   Hola
   Bounjour
 
-Do:
+Do (Yank the first two linesline, visually select the last line and stamp):
   Vjy
   jj
   VS
 
-Expect:
+Expect (The last two lines are replaced with the first line):
   Hello
   Hola
   Hello
   Hola
+
+# TODO: Repeating visual line stamp
+# TODO: Repeating visual character stamp
+# TODO: Repeating motion stamp
+# TODO: Repeating line stamp

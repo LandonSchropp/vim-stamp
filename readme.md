@@ -5,8 +5,9 @@ Vim Stamp is a plugin that makes it easy to repeatedly replace text without affe
 macros.
 
 Vim Stamp works with normal mode motions (`S<motion>`), visual line selections (`V<motion>S`),
-visual character selections (`v<motion>S`) and entire lines (`SS`). Vim Stamp also works with the
-repeat key (`.`) if you have the excellent [repeat.vim]() plugin installed (and you should).
+visual character selections (`v<motion>S`) and entire lines (`SS`). Motion stamps also work with the
+repeat key (`.`) if you have the [repeat.vim](https://github.com/tpope/vim-repeat) plugin installed
+(and you should).
 
 ## Installation
 

@@ -105,9 +105,3 @@ Do (Yank the first two words and stamp the last word):
 
 Expect (The last two lines are replaced with the first line):
   Hello Hola Hello Hola
-
-#######################
-# Stamping repetition #
-#######################
-
-# TODO: Repeating visual character stamp

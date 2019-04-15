@@ -69,9 +69,3 @@ Do (Yank the lst word and stamp from the second word until the beginning of the 
 
 Expect (Replaces the last two words with the first word):
   Bonjour Bonjour
-
-#######################
-# Stamping repetition #
-#######################
-
-# TODO: Add a repeat case.

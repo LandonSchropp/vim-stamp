@@ -114,4 +114,19 @@ Expect (The last two lines are replaced with the first line):
 # Stamping repetition #
 #######################
 
-# TODO: Repeating visual line stamp
+Given (Multiple lines):
+  Hello
+  Hola
+  Bonjour
+
+Do (Yank the first line, stamp the second line and repeat the on the third line):
+  yy
+  j
+  SS
+  j
+  .
+
+Expect (The last two words are replaced with the first word):
+  Hello
+  Hello
+  Hello

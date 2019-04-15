@@ -15,12 +15,27 @@ endfunction
 " Stamps a character-wise visual selection.
 function! VisualCharacterStamp() range
 
+  " Store the line, column and column width of the end of the selection before we manipulate the
+  " text.
+  let [ s:line, s:column ] = getpos("'>")[1:2]
+  let s:column_width = strwidth(getline(s:line))
+
   " Insert a character after the visual selection. This prevents the previous space from being
   " removed when there are no characters after the current motion (e.g. $).
   silent execute "normal! `>a#\<esc>"
 
   " Reselect the last visual selection.
   silent execute "normal! gv"
+
+  " If the value of the `selection` variable is set to `inclusive` or `exclusive`, it's possible for
+  " the selection to extend beyond the end of the line. If that happens, the extra character logic
+  " will break. At first, I tried to solve this by setting the local `selection` value to `old`.
+  " However, that doesn't work because `gv` will select the extra character, even after this setting
+  " is enabled. In order to avoid this problem, the solution is to detect if the selection extends
+  " beyond the line length, and if so to move it to the left one character.
+  if s:column > s:column_width
+    silent execute 'normal! ' . (s:column - s:column_width) . 'h'
+  endif
 
   " Delete the selected text without updating the unnamed register.
   silent execute 'normal! "_d'

@@ -98,7 +98,7 @@ endfunction
 function! LineStamp()
 
   " Visually select the current line.
-  silent execute "normal! V"
+  silent execute "normal! V\<esc>"
 
   " Call the visual stamp function with the simulation visual selection.
   call VisualStamp("V")

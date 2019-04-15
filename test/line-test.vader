@@ -7,7 +7,7 @@ Given (A single line):
 
 Do (Yank and stamp the line):
   yy
-  VS
+  SS
 
 Expect (The line stays the same):
   Hello
@@ -24,7 +24,7 @@ Given (Multiple lines):
 Do (Yank the first line and stamp the last line):
   yy
   G
-  VS
+  SS
 
 Expect (The last line is replaced with the first line):
   Hello
@@ -42,7 +42,7 @@ Do (Yank the last line and stamp the first line):
   G
   yy
   gg
-  VS
+  SS
 
 Expect (The first line is replaced with the last line):
   Bonjour
@@ -63,7 +63,7 @@ Given (Multiple lines):
 Do (Yank the first word and stamp the last line):
   yiw
   G
-  VS
+  SS
 
 Expect (The last line is replaced with the first word):
   Hello
@@ -81,7 +81,7 @@ Do (Yank the last word and stamp the first line):
   G
   yiw
   gg
-  VS
+  SS
 
 Expect (The first line is replaced with the last word):
   Bonjour
@@ -99,26 +99,10 @@ Given (Multiple lines):
   Hola
   Bonjour
 
-Do (Yank the first line and stamp the last two):
-  yy
-  j
-  VGS
-
-Expect (The last two lines are replaced with the first line):
-  Hello
-  Hello
-
----
-
-Given (Multiple lines):
-  Hello
-  Hola
-  Bonjour
-
 Do (Yank the first two lines and stamp the last):
   Vjy
   G
-  VS
+  SS
 
 Expect (The last two lines are replaced with the first line):
   Hello

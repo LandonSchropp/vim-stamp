@@ -6,7 +6,7 @@ macros.
 
 Vim Stamp works with normal mode motions (`S<motion>`), visual line selections (`V<motion>S`),
 visual character selections (`v<motion>S`) and entire lines (`SS`). Vim Stamp also works with the
-repeat key (`.`).
+repeat key (`.`) if you have the excellent [repeat.vim]() plugin installed (and you should).
 
 ## Installation
 

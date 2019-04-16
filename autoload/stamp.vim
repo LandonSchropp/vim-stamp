@@ -1,19 +1,14 @@
-" Create Stamp (S) operator
-vnoremap <silent> S :call VisualStamp(visualmode())<CR>
-nnoremap <silent> S :set opfunc=MotionStamp<CR>g@
-nnoremap <silent> SS :call LineStamp()<CR>
-
 " Stamps a visual selection in the given mode.
-function! VisualStamp(mode) range
+function! stamp#VisualStamp(mode) range
   if a:mode ==# "V"
-    call VisualLineStamp()
+    call stamp#VisualLineStamp()
   elseif a:mode ==# "v"
-    call VisualCharacterStamp()
+    call stamp#VisualCharacterStamp()
   endif
 endfunction
 
 " Stamps a character-wise visual selection.
-function! VisualCharacterStamp() range
+function! stamp#VisualCharacterStamp() range
 
   " Store the line, column and column width of the end of the selection before we manipulate the
   " text.
@@ -53,7 +48,7 @@ function! VisualCharacterStamp() range
 endfunction
 
 " Stamps the current selection in visual mode.
-function! VisualLineStamp() range
+function! stamp#VisualLineStamp() range
 
   " Insert a new line below the visual selection. This prevents issues when replacing the last line
   " in the file.
@@ -80,7 +75,7 @@ endfunction
 
 " Stamps the current motion in normal mode.
 " TODO: Determine if we need to save the registers.
-function! MotionStamp(type)
+function! stamp#MotionStamp(type)
 
   let unnamed_register = @@
 
@@ -89,17 +84,17 @@ function! MotionStamp(type)
   silent execute "normal! `[v`]\<esc>"
 
   " Call the visual stamp function with the simulation visual selection.
-  call VisualStamp("v")
+  call stamp#VisualStamp("v")
 
   let @@ = unnamed_register
 endfunction
 
 " Stamps the current line.
-function! LineStamp()
+function! stamp#LineStamp()
 
   " Visually select the current line.
   silent execute "normal! V\<esc>"
 
   " Call the visual stamp function with the simulation visual selection.
-  call VisualStamp("V")
+  call stamp#VisualStamp("V")
 endfunction

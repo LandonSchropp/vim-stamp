@@ -1,7 +1,8 @@
 # Vim Stamp
 
-Vim Stamp is a plugin that makes it easy to replace text with the contents of the last command. This
-allows you to very quickly replace text in a repeatable way without the need for macros.
+Stamp is a [NeoVim](https://neovim.io/) and [Vim](https://www.vim.org/) plugin that makes it easy to
+replace text with the contents of the last command. This allows you to very quickly replace text in
+a repeatable way without the need for macros.
 
 ## Demo
 
@@ -34,11 +35,11 @@ the `.` key. Try it by switching to the next word and then stamping again with `
 Hello Hello [H]ello Olà Hallo
 ```
 
-The great thing about Vim Stamp is it works with any motion. That means you have maximum flexibility
+The great thing about Stamp is it works with any motion. That means you have maximum flexibility
 when stamping. Some of the more useful motions include stamping inside strings (`Si"`), stamping
 blocks (`Sib`), stamping paragraphs (`Sip`) and stamping until the end of the line (`S$`).
 
-Vim Stamp supports the following modes:
+Stamp supports the following modes:
 
 * Normal mode motions (`S<motion>`)
 * Visual line selections (`V<motion>S`)
@@ -47,14 +48,14 @@ Vim Stamp supports the following modes:
 
 ## Installation
 
-Vim Stamp can be installed using your favorite Vim plugin manager. I recommend using
+Stamp can be installed using your favorite Vim plugin manager. I recommend using
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 ``` vim
 Plug 'LandonSchropp/vim-stamp'
 ```
 
-If you'd like Vim Stamp to work with the repeat key (`.`), you need to install the
+If you'd like Stamp to work with the repeat key (`.`), you need to install the
 [repeat.vim](https://github.com/tpope/vim-repeat) plugin as well.
 
 ## Development
@@ -63,7 +64,7 @@ If you'd like to poke around in this repo, it comes with a few scripts to make l
 much easier:
 
 * [`bin/run`](bin/run): Execute arbitrary commands inside of a Neovim instance that only has Vader
-  and Vim Stamp loaded.
+  and Stamp loaded.
 * [`bin/test`](bin/test): Run the Vader test suite.
 * [`bin/example`](bin/run): Calls `bin/run` and loads a buffer with some sample data for easy,
   on-the-fly testing.
